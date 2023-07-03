@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Please check console</h1>
+  </body>
+  <script>
+    function outerFunction() {
+      let x = 10;
+
+      function innerFunction1() {
+        console.log("Inner Function 1: ", x);
+      }
+
+      function innerFunction2() {
+        console.log("Inner Function 2: ", x * 2);
+      }
+
+      function innerFunction3() {
+        console.log("Inner Function 3: ", x + 5);
+      }
+
+      return {
+        innerFunction1,
+        innerFunction2,
+        innerFunction3,
+      };
+    }
+
+    const closure = outerFunction();
+
+    closure.innerFunction1();
+    closure.innerFunction2();
+    closure.innerFunction3(); 
+  </script>
+</html>
